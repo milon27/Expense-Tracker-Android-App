@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.m27lab.expensetracker.data.repository.ExpenseRepo
 import com.m27lab.expensetracker.viewmodels.ExpenseViewModel
 
+//not used.
 @Suppress("UNCHECKED_CAST")
 class ExpenseViewModelFactory(val repo: ExpenseRepo):ViewModelProvider.NewInstanceFactory() {
 //    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
