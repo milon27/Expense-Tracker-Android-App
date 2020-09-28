@@ -7,7 +7,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-//@repo require a DB instantce
+//not used in this project
+//@repo require a DB instance
 class ShoppingViewModel(private val repo: ExpenseRepo) : ViewModel() {
 
     fun set(itemTable: ExpenseEntity)= CoroutineScope(Dispatchers.Main)
