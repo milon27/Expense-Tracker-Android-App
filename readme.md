@@ -4,7 +4,7 @@
 # Expense Tracker Android App with MVVM,Kotlin,Coroutines,Room,Navigation Component,Dagger Hilt
 
 
-![Expense Tracker Img](https://github.com/milon27/Expense-Tracker-Android-App/blob/master/screenshot.jpg?raw=true)
+![Expense Tracker Img](https://github.com/milon27/Expense-Tracker-Android-App/blob/withoutHilt/screenshot.jpg?raw=true)
 
 ## Technology Used
 #### MVVM Architechture
