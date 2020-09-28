@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@color/bg_color"
+    >
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_edit_text_white"
+        android:hint="Item Title or description e.g. Rice,Need to do the shopping at evening."
+        android:gravity="start"
+        android:inputType="textMultiLine"
+        android:drawablePadding="5dp"
+        android:textSize="15sp"
+        android:padding="12dp" />
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="numberDecimal"
+        android:background="@drawable/bg_edit_text_white"
+        android:hint="Item Price e.g. 200 tk"
+        android:drawablePadding="5dp"
+        android:textSize="15sp"
+        android:padding="12dp" />
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Add New Item"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_edit_text_primary"
+        />
+
+</LinearLayout>

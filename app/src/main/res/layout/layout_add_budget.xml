@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:gravity="center"
+    android:background="@color/bg_color"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set New Budget"
+        android:textAlignment="center"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="17sp"
+        android:layout_marginBottom="5dp"
+
+        />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+
+        android:src="@drawable/ic_calculator"/>
+
+    <EditText
+        android:id="@+id/total_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="numberDecimal"
+        android:background="@drawable/bg_edit_text_white"
+        android:hint="Total Budget e.g. 20000 tk"
+        android:drawablePadding="5dp"
+        android:textSize="15sp"
+        android:padding="12dp" />
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Set New Budget"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_edit_text_primary"
+        />
+
+</LinearLayout>

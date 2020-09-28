@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.ExpenseFragment"
+    android:background="@color/bg_color"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashbord"
+                android:textColor="@android:color/tertiary_text_light"
+                android:textSize="28sp"
+                android:padding="8dp"
+                android:layout_marginHorizontal="12dp"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_layer"
+                android:padding="20dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/title"
+                android:elevation="1dp"
+                >
+                <TextView
+                    android:id="@+id/budget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_edit"
+                    android:drawableStart="@drawable/ic_wallet"
+                    android:drawablePadding="8dp"
+                    android:text="Budget : loading.."
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expense : loading.."
+                    android:drawableStart="@drawable/ic_shopping_bag"
+                    android:drawablePadding="8dp"
+                    android:textColor="@android:color/tertiary_text_light"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="5dp"
+                    />
+                <TextView
+                    android:id="@+id/balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Balance : loading.."
+                    android:drawableStart="@drawable/ic_credit_card"
+                    android:drawablePadding="8dp"
+                    android:textColor="@android:color/tertiary_text_light"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="5dp"
+                    />
+                <ProgressBar
+                    android:id="@+id/pbar_hoz"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="50" />
+                <TextView
+                    android:id="@+id/percent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0/100%"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/tertiary_text_light"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/expense_list_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expense List"
+                android:textColor="@android:color/tertiary_text_light"
+                android:textSize="17sp"
+                android:layout_marginBottom="5dp"
+                android:paddingHorizontal="15dp"
+                android:layout_below="@+id/top_layout"
+                />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_margin="4dp"
+                android:id="@+id/rv_expenseList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/layout_shopping"
+                tools:itemCount="3"
+                android:layout_below="@+id/expense_list_title"
+                />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Add New"
+        android:src="@drawable/ic_add"
+        android:tint="@color/bg_color"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        />
+</RelativeLayout>

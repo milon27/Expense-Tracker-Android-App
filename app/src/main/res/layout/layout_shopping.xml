@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layoutID"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_item"
+    android:padding="10dp"
+    android:layout_margin="8dp"
+    android:layout_marginVertical="8dp">
+
+
+    <ImageView
+        android:id="@+id/deleteItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title loading..."
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price loading..."
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="18sp"
+        />
+
+    <Button
+        android:id="@+id/purchased"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Purchased"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_edit_text_primary"
+        android:visibility="gone"
+        />
+
+</LinearLayout>
