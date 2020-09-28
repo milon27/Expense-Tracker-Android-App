@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -19,15 +20,19 @@ import com.m27lab.expensetracker.viewmodels.ExpenseViewModel
 import com.m27lab.expensetracker.views.adapters.NoteListAdapter
 import com.m27lab.expensetracker.views.dialogs.AddItemDialog
 import com.m27lab.expensetracker.views.dialogs.OnAddItemListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_note.*
 
-
+@AndroidEntryPoint
 class NoteFragment : Fragment(R.layout.fragment_note) {
+    private val TAG = "NoteFragment"
 
-    private lateinit var viewModel: ExpenseViewModel
+    private val viewModel: ExpenseViewModel by viewModels()
+
+
     private lateinit var adapter: NoteListAdapter
     private lateinit var contxt :Context
-    private val TAG = "NoteFragment"
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         contxt=context
@@ -45,7 +50,7 @@ class NoteFragment : Fragment(R.layout.fragment_note) {
         val list = ArrayList<ExpenseEntity>()
 
         //viewModel = ViewModelProvider(this, factory).get(ShoppingViewModel::class.java);
-        viewModel = ViewModelProvider(this).get(ExpenseViewModel::class.java);
+        //viewModel = ViewModelProvider(this).get(ExpenseViewModel::class.java);
         adapter = NoteListAdapter(contxt,list, viewModel)
 
         //set :: recyclerView.layoutManager=LinearLayoutManager(this)
@@ -56,7 +61,7 @@ class NoteFragment : Fragment(R.layout.fragment_note) {
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
 
-        viewModel.getAllItems(contxt).observe(viewLifecycleOwner, Observer {
+        viewModel.getAllItems().observe(viewLifecycleOwner, Observer {
             adapter.items = it
             Log.d(TAG, "onCreate: ${it.size}   ")
             adapter.notifyDataSetChanged()
@@ -67,7 +72,7 @@ class NoteFragment : Fragment(R.layout.fragment_note) {
             AddItemDialog(contxt, object : OnAddItemListener {
                 override fun onAddItem(item: ExpenseEntity) {
                     //Log.d(TAG, "onAddItem: $item")
-                    viewModel.set(contxt,item)
+                    viewModel.set(item)
                     Toast.makeText(contxt, "Added Item", Toast.LENGTH_SHORT).show()
                 }
             }).show()
@@ -78,14 +83,14 @@ class NoteFragment : Fragment(R.layout.fragment_note) {
             override fun afterTextChanged(s: Editable?) {
                 val text: String = s.toString().trim()
                 if (!text.isEmpty() && text.length > 2) {
-                    viewModel.searchNow(contxt,text).observe(viewLifecycleOwner, Observer
+                    viewModel.searchNow(text).observe(viewLifecycleOwner, Observer
                     {
                         adapter.items = it
                         list.addAll(it)
                         adapter.notifyDataSetChanged()
                     })
                 } else {
-                    viewModel.getAllItems(contxt).observe(viewLifecycleOwner, Observer {
+                    viewModel.getAllItems().observe(viewLifecycleOwner, Observer {
                         adapter.items = it
                         //Log.d("TAG", "onCreate: ${list.size}   "+it.get(0).title)
                         adapter.notifyDataSetChanged()

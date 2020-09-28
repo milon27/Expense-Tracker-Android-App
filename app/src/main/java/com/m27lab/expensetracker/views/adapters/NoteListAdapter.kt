@@ -56,13 +56,13 @@ class NoteListAdapter(
 
         holder.itemView.deleteItem.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
-                viewModel.delete(context,item)
+                viewModel.delete(item)
             }
         })
 
         holder.itemView.purchased.setOnClickListener{
             item.purchased=true
-            viewModel.set(context,item)
+            viewModel.set(item)
         }
 
     }

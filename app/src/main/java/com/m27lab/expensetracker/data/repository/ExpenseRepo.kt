@@ -1,26 +1,27 @@
 package com.m27lab.expensetracker.data.repository
 
-import com.m27lab.expensetracker.data.db.ShoppingDB
+import com.m27lab.expensetracker.data.db.dao.ExpenseDAO
 import com.m27lab.expensetracker.data.db.entities.ExpenseEntity
 import java.util.*
+import javax.inject.Inject
 
-class ExpenseRepo(private val db: ShoppingDB) {
+class ExpenseRepo @Inject constructor(private val dao:ExpenseDAO) {
 
-    suspend fun set(expenseEntity: ExpenseEntity)=db.getExpenseDAO().set(expenseEntity)
+    suspend fun set(expenseEntity: ExpenseEntity)=dao.set(expenseEntity)
 
-    suspend fun delete(item: ExpenseEntity)=db.getExpenseDAO().delete(item)
+    suspend fun delete(item: ExpenseEntity)=dao.delete(item)
 
-    fun getAllItem()=db.getExpenseDAO().getAllItem()
+    fun getAllItem()=dao.getAllItem()
 
-    fun getAllExpenseItem()=db.getExpenseDAO().getAllExpenseItem()
+    fun getAllExpenseItem()=dao.getAllExpenseItem()
 
-    fun searchNow(string: String)=db.getExpenseDAO().search(string)
+    fun searchNow(string: String)=dao.search(string)
 
-    fun getTotalExpense()=db.getExpenseDAO().getTotalExpense()
+    fun getTotalExpense()=dao.getTotalExpense()
 
 
-    fun getToday()=db.getExpenseDAO().getToday(Date())
+    fun getToday()=dao.getToday(Date())
 
-    fun getInRange(start:Date,end:Date)=db.getExpenseDAO().getInRange(start,end)
+    fun getInRange(start:Date,end:Date)=dao.getInRange(start,end)
 
 }

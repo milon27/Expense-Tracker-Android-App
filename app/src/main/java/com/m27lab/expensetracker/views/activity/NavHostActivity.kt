@@ -6,8 +6,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.m27lab.expensetracker.R
 import com.m27lab.expensetracker.utils.Utils
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_nav_host.*
 
+@AndroidEntryPoint
 class NavHostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +19,7 @@ class NavHostActivity : AppCompatActivity() {
 
         //step 1:
         //java:var navController= Navigation.findNavController(this,R.id.host_fragment)
-        var navController = host_fragment.findNavController()
+        val navController = host_fragment.findNavController()
         //setp 2
         // Setting Navigation Controller with the BottomNavigationView
         //NavigationUI.setupWithNavController(bottom_nav, navController)---java

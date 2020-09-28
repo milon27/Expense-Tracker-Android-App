@@ -7,7 +7,7 @@ import com.m27lab.expensetracker.viewmodels.ExpenseViewModel
 
 @Suppress("UNCHECKED_CAST")
 class ExpenseViewModelFactory(val repo: ExpenseRepo):ViewModelProvider.NewInstanceFactory() {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return ExpenseViewModel() as T
-    }
+//    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+//        return ExpenseViewModel() as T
+//    }
 }

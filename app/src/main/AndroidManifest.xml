@@ -3,9 +3,8 @@
     package="com.m27lab.expensetracker">
 
 
-<!--    android:name=".di.DiApplication"-->
     <application
-
+        android:name=".di.DiApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
         android:logo="@mipmap/ic_logo"
