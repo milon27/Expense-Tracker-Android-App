@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.m27lab.expensetracker.views.activity.ShoppingListActivity"/>
         <activity android:name="com.m27lab.expensetracker.views.activity.NavHostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
